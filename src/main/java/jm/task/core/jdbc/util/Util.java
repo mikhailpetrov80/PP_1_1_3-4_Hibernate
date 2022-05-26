@@ -11,10 +11,6 @@ public class Util {
         String URL = "jdbc:mysql://localhost:3306/myDbTest";
         String USERNAME = "root";
         String PASSWORD = "12345";
-        Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-        if (!conn.isClosed()) {
-            System.out.println("Соединение установлено");
-        }
-        return conn;
+        return DriverManager.getConnection(URL, USERNAME, PASSWORD);
     }
 }
