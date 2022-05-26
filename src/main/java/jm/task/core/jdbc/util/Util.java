@@ -7,10 +7,16 @@ import java.sql.SQLException;
 
 public class Util {
 
-    public Connection getConnect() throws SQLException {
-        String URL = "jdbc:mysql://localhost:3306/myDbTest";
-        String USERNAME = "root";
-        String PASSWORD = "12345";
-        return DriverManager.getConnection(URL, USERNAME, PASSWORD);
+    String URL = "jdbc:mysql://localhost:3306/myDbTest";
+    String USERNAME = "root";
+    String PASSWORD = "12345";
+
+    public Connection getConnect() {
+        Connection conn = null;
+        try {
+            conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+        } catch (SQLException ignored) {
+        }
+        return conn;
     }
 }
