@@ -7,9 +7,9 @@ import java.sql.SQLException;
 
 public class Util {
 
-    String URL = "jdbc:mysql://localhost:3306/myDbTest";
-    String USERNAME = "root";
-    String PASSWORD = "12345";
+    final String URL = "jdbc:mysql://localhost:3306/myDbTest";
+    final String USERNAME = "root";
+    final String PASSWORD = "12345";
 
     public Connection getConnect() {
         Connection conn = null;
