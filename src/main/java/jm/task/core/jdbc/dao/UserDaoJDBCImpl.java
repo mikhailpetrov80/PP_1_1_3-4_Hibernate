@@ -11,12 +11,12 @@ public class UserDaoJDBCImpl implements UserDao {
 
     Util util = new Util();
     Connection conn = util.getConnect();
-    public static final String createUsersTableSql = "CREATE TABLE IF NOT EXISTS USERS (id INT PRIMARY KEY AUTO_INCREMENT, name VARCHAR(255), lastName VARCHAR(255), age TINYINT)";
-    public static final String dropUsersTableSql = "DROP TABLE IF EXISTS USERS";
-    public static final String saveUserSql = "INSERT INTO USERS (name, lastname, age) VALUES (?, ?, ?)";
-    public static final String removeUserByIdSql = "DELETE FROM USERS WHERE  ? ";
-    public static final String getAllUsersSql = "SELECT * FROM USERS";
-    public static final String cleanUsersTableSql = "TRUNCATE TABLE USERS";
+    private static final String createUsersTableSql = "CREATE TABLE IF NOT EXISTS USERS (id INT PRIMARY KEY AUTO_INCREMENT, name VARCHAR(255), lastName VARCHAR(255), age TINYINT)";
+    private static final String dropUsersTableSql = "DROP TABLE IF EXISTS USERS";
+    private static final String saveUserSql = "INSERT INTO USERS (name, lastname, age) VALUES (?, ?, ?)";
+    private static final String removeUserByIdSql = "DELETE FROM USERS WHERE  ? ";
+    private static final String getAllUsersSql = "SELECT * FROM USERS";
+    private static final String cleanUsersTableSql = "TRUNCATE TABLE USERS";
     public UserDaoJDBCImpl() {
 
     }
