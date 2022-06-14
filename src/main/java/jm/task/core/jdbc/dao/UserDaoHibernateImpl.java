@@ -13,11 +13,11 @@ public class UserDaoHibernateImpl implements UserDao {
 
     }
 
-    private static final String createUsersTableSql = "CREATE TABLE IF NOT EXISTS USERS (id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), lastName VARCHAR(255), age TINYINT)";
-    private static final String dropUsersTableSql = "DROP TABLE IF EXISTS USERS";
-    private static final String cleanUsersTableSql = "TRUNCATE TABLE USERS";
+    private static final String createUsersTableSql = "CREATE TABLE IF NOT EXISTS user (id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), lastName VARCHAR(255), age TINYINT)";
+    private static final String dropUsersTableSql = "DROP TABLE IF EXISTS user";
+    private static final String cleanUsersTableSql = "TRUNCATE TABLE user";
 
-    SessionFactory sessionFactory = Util.getSessionFactory();
+    private static final SessionFactory sessionFactory = Util.getSessionFactory();
 
     @Override
     public void createUsersTable() {
@@ -75,14 +75,7 @@ public class UserDaoHibernateImpl implements UserDao {
 
     @Override
     public List<User> getAllUsers() {
-        /*List<User> result = null;
-        try (Session session = sessionFactory.openSession()) {
-            result = session.createQuery("From User", User.class).list();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }*/
         return sessionFactory.openSession().createQuery("From User", User.class).list();
-
     }
 
     @Override
